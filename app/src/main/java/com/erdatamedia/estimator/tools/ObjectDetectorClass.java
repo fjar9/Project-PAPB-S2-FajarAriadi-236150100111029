@@ -47,7 +47,6 @@ public class ObjectDetectorClass {
     public double result = 0.0;
     private String SIDE = "";
     public String H = "RIGHT";
-    public int THICKNESS = 10;
 
     public ObjectDetectorClass(AssetManager assetManager, String modelPath, String labelPath,
                                int inputSize, String side)
@@ -91,7 +90,7 @@ public class ObjectDetectorClass {
     }
 
     // create new Mat function
-    public Mat recognizeImage(Mat mat_image) {
+    public Mat recognizeImage(Mat mat_image, int THICKNESS) {
         // Rotate original image by 90 degree get get portrait frame
         Mat rotated_mat_image = mat_image;
 //        Mat rotated_mat_image = new Mat();

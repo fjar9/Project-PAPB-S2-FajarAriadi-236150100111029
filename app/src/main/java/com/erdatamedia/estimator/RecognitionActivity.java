@@ -165,7 +165,6 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
 //                distance = 300 + progress;
 //                String aa = (300 + progress) + " cm";
 //                distanceTv.setText(aa);
-                objectDetectorClass.THICKNESS = progress;
             }
 
             @Override
@@ -374,7 +373,7 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
         mRgba = cvCameraViewFrame.rgba();
         mGray = cvCameraViewFrame.gray();
 
-        recognized = objectDetectorClass.recognizeImage(mRgba);
+        recognized = objectDetectorClass.recognizeImage(mRgba, 100);
         return recognized;
     }
 

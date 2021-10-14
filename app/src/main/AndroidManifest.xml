@@ -25,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Estimator"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ParamActivity"></activity>
+        <activity android:name=".ParamActivity" />
         <activity
             android:name=".PrepareActivity"
             android:screenOrientation="landscape" />
@@ -42,7 +42,7 @@
         <activity android:name=".TestingActivity" />
         <activity
             android:name=".TakePictureActivity"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
         <activity
             android:name=".SelectDeviceActivity"
             android:parentActivityName=".TakePictureActivity"
@@ -56,7 +56,9 @@
         <activity
             android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
