@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RecognitionActivity">
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/frame_Surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ImageView
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/flip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_above="@id/bluetooth"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/spacing_large"
+        android:background="@drawable/round_button"
+        android:padding="@dimen/spacing_smlarge"
+        android:src="@drawable/ic_flip" />
+
+    <ImageView
+        android:id="@+id/bluetooth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/capture"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/spacing_large"
+        android:background="@drawable/round_button"
+        android:padding="@dimen/spacing_smlarge"
+        android:src="@drawable/ic_bluetooth" />
+
+    <ImageView
+        android:id="@+id/capture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/spacing_large"
+        android:background="@drawable/round_button2"
+        android:padding="@dimen/spacing_smlarge"
+        android:src="@drawable/ic_camera" />
+
+    <Button
+        android:id="@+id/captured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/spacing_large"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:layout_toStartOf="@id/capture"
+        android:text="0 foto"
+        android:textAllCaps="false" />
+
+    <TextView
+        android:id="@+id/distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/captured"
+        android:layout_margin="@dimen/spacing_large"
+        android:layout_toStartOf="@id/bluetooth"
+        android:background="@color/grey_400"
+        android:padding="@dimen/spacing_large"
+        android:text="-"
+        android:textColor="@color/black" />
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/spacing_large"
+        android:layout_toStartOf="@id/captured"
+        android:max="50"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/control"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bluetooth"
+        android:layout_alignParentEnd="true"
+        android:layout_marginHorizontal="@dimen/spacing_large"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_large"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/save"
+            style="@style/Widget.MaterialComponents.Button.UnelevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Simpan"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/delete"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buang"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</RelativeLayout>

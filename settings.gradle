@@ -1,0 +1,3 @@
+rootProject.name = "Estimator"
+include ':app'
+include ':openCVLibrary331'

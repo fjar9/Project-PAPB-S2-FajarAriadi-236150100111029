@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Estimator</string>
+    <string-array name="siluet">
+        <item>Sapi Bali</item>
+        <item>Sapi Madura</item>
+        <item>Sapi PO</item>
+    </string-array>
+</resources>
