@@ -1,6 +1,5 @@
 -- Merging decision tree log ---
 manifest
-<<<<<<< HEAD
 ADDED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
 INJECTED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
 INJECTED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
@@ -28,32 +27,3 @@ INJECTED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidMani
 		INJECTED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml
 		ADDED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
 		INJECTED from D:\Project\android\estimator\openCVLibrary331\src\main\AndroidManifest.xml
-=======
-ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:2:1-8:12
-	package
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:3:7-27
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
-	android:versionName
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:5:7-34
-	xmlns:android
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:2:11-69
-	android:versionCode
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:4:7-33
-uses-sdk
-ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-	android:targetSdkVersion
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:15-44
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
-	android:minSdkVersion
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
-		ADDED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml:7:5-47
-		INJECTED from E:\ANDROID\siboba2\openCVLibrary331\src\main\AndroidManifest.xml
->>>>>>> 64499b9 (change)

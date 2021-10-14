@@ -239,7 +239,7 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
                     case MESSAGE_READ:
                         // Read message from Arduino
                         String jarakReal = !msg.obj.toString().equals("") ? msg.obj.toString() : "0";
-                        multiplier = 300 * 0.026 + param;
+                        multiplier = (Double.parseDouble(jarakReal) - 300) * 0.026 + param;
                         String arduinoMsg = jarakReal + " cm";
                         distance = Double.parseDouble(jarakReal);
                         distanceTv.setText(arduinoMsg);

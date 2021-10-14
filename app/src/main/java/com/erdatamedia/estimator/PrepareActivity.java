@@ -100,11 +100,6 @@ public class PrepareActivity extends AppCompatActivity {
                     && !TextUtils.isEmpty(kelaminEt.getText())) estimate();
             else Toast.makeText(activity, "Lengkapi form", Toast.LENGTH_SHORT).show();
         });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> cc58661 (change)
     }
 
     private void estimate() {

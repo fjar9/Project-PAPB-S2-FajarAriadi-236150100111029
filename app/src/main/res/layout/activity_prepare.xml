@@ -8,7 +8,6 @@
 
     <View
         android:id="@+id/center"
-        android:visibility="gone"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_centerInParent="true" />
@@ -23,7 +22,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingBottom="100dp"
         android:layout_above="@id/center"
         android:layout_alignParentStart="true"
         android:layout_toStartOf="@id/center">
@@ -110,15 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/spacing_large"
-<<<<<<< HEAD
         android:layout_toEndOf="@id/center"
         android:scrollbars="vertical">
-=======
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical"
-        app:cardBackgroundColor="@color/grey_100"
-        app:cardCornerRadius="8dp">
->>>>>>> cc58661 (change)
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -179,30 +170,9 @@
 
             </RelativeLayout>
 
-<<<<<<< HEAD
             <View
                 android:layout_width="0dp"
                 android:layout_height="@dimen/spacing_large" />
-=======
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_large"
-        android:layout_toEndOf="@id/center"
-        app:cardBackgroundColor="@color/grey_100"
-        app:cardCornerRadius="8dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/spacing_large">
->>>>>>> cc58661 (change)
 
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"

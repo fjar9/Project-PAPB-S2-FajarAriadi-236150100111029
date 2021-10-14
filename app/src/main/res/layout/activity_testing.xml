@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".TestingActivity">
+
+    <View
+        android:id="@+id/acuan"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:background="@color/amber_100" />
+
+    <View
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:layout_below="@id/acuan"
+        android:layout_alignParentEnd="true"
+        android:background="@color/amber_200" />
+
+    <TextView
+        android:id="@+id/acuanm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/acuan"
+        android:text="1m" />
+
+    <ImageView
+        android:id="@+id/foto"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_below="@id/seek"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/a" />
+
+    <TextView
+        android:id="@+id/real"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/foto"
+        android:layout_alignParentEnd="true"
+        android:text="1m" />
+
+    <SeekBar
+        android:id="@+id/seek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginHorizontal="10dp"
+        android:max="10"
+        android:progress="2" />
+
+    <TextView
+        android:id="@+id/jarak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seek"
+        android:gravity="center"
+        android:text="2m" />
+
+    <TextView
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:id="@+id/drawing"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" />
+
+</RelativeLayout>
