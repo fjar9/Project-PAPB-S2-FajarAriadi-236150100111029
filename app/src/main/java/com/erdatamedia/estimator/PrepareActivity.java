@@ -100,6 +100,34 @@ public class PrepareActivity extends AppCompatActivity {
                     && !TextUtils.isEmpty(kelaminEt.getText())) estimate();
             else Toast.makeText(activity, "Lengkapi form", Toast.LENGTH_SHORT).show();
         });
+
+        loading.show();
+        service.dashboard()
+                .enqueue(new Callback<ResponseDashboard>() {
+                    @Override
+                    public void onResponse(Call<ResponseDashboard> call, Response<ResponseDashboard> response) {
+                        if (response.isSuccessful()) {
+                            if (response.body() != null && response.body().status) {
+                                races.clear();
+                                races.addAll(response.body().datas.races);
+                                for (ResponseDashboard.Race race : races)
+                                    racenames.add(race.race_name);
+                                bangsaAdapter.notifyDataSetChanged();
+
+                                param = response.body().param;
+                            }
+                        } else {
+                            Toast.makeText(activity, response.message(), Toast.LENGTH_SHORT).show();
+                        }
+                        loading.dismiss();
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseDashboard> call, Throwable t) {
+                        loading.dismiss();
+                        Toast.makeText(activity, "Periksa koneksi anda " + t.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void estimate() {
@@ -139,39 +167,6 @@ public class PrepareActivity extends AppCompatActivity {
             }
         });
     }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        loading.show();
-        service.dashboard()
-                .enqueue(new Callback<ResponseDashboard>() {
-                    @Override
-                    public void onResponse(Call<ResponseDashboard> call, Response<ResponseDashboard> response) {
-                        if (response.isSuccessful()) {
-                            if (response.body() != null && response.body().status) {
-                                races.clear();
-                                races.addAll(response.body().datas.races);
-                                for (ResponseDashboard.Race race : races)
-                                    racenames.add(race.race_name);
-                                bangsaAdapter.notifyDataSetChanged();
-
-                                param = response.body().param;
-                            }
-                        } else {
-                            Toast.makeText(activity, response.message(), Toast.LENGTH_SHORT).show();
-                        }
-                        loading.dismiss();
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResponseDashboard> call, Throwable t) {
-                        loading.dismiss();
-                        Toast.makeText(activity, "Periksa koneksi anda " + t.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
-
 
     @Override
     protected void onResume() {

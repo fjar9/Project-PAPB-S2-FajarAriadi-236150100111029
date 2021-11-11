@@ -64,5 +64,6 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite-task-vision:0.1.0'
     implementation 'org.tensorflow:tensorflow-lite-task-text:0.1.0'
 
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.23'
 
 }

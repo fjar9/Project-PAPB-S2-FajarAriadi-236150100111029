@@ -73,11 +73,12 @@ public class ChooseFragment extends DialogFragment {
             activity.onBackPressed();
             dismiss();
         });
+        TextView infoTv = root_view.findViewById(R.id.info);
         Button choseBtn = root_view.findViewById(R.id.chose);
         result = result.replace(".jpg", "");
         result = String.format(Locale.getDefault(), "%.02f", Float.parseFloat(result));
-        String s = "Pilih gambar ke " + (no + 1) + " dgn jarak " + distance + "cm dan hasilnya " + result;
-        choseBtn.setText(s);
+        String s = "Jarak : " + distance + " cm, hasil : " + result + " cm";
+        infoTv.setText(s);
         choseBtn.setOnClickListener(v -> {
             File file = new File(activity.getExternalFilesDir(
                     Environment.DIRECTORY_PICTURES + "/" + "CHOSEN"), name);

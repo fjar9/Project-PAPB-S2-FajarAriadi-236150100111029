@@ -77,7 +77,7 @@ public class SnapCapturedAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     public class OriginalViewHolder extends RecyclerView.ViewHolder {
-        public ImageButton deleteBtn;
+        public ImageView deleteBtn;
         public TextView namaTv;
         public ImageView coverIv;
         public View lyt_parent;

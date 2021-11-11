@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitClientInstance {
 
     private static Retrofit retrofit;
-    private static final String BASE_URL = "http://admin.siboba.net/api/";
+    private static final String BASE_URL = "https://lolitsapi.litbang.pertanian.go.id/siboba/index.php/api/";
 
     public static Retrofit getRetrofitInstance() {
         if (retrofit == null) {

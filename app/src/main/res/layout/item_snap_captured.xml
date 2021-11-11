@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="160dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginEnd="@dimen/spacing_large"
     app:cardBackgroundColor="@android:color/white"
     app:cardCornerRadius="4dp"
     app:cardElevation="0dp">
@@ -11,8 +10,13 @@
     <RelativeLayout
         android:id="@+id/lyt_parent"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/item_cover_iv"
@@ -26,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/yellow_500"
+            android:background="@color/hijau"
             android:maxLines="1"
             android:paddingLeft="@dimen/spacing_middle"
             android:paddingTop="@dimen/spacing_medium"
@@ -34,16 +38,17 @@
             android:paddingBottom="@dimen/spacing_xmedium"
             android:singleLine="true"
             android:text="@string/app_name"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/item_delete"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
+            android:padding="@dimen/spacing_small"
             android:src="@drawable/ic_close" />
 
     </RelativeLayout>
 
 
-</androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

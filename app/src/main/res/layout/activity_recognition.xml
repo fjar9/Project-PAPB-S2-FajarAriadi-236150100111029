@@ -21,13 +21,13 @@
         android:id="@+id/flip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:layout_above="@id/bluetooth"
         android:layout_alignParentEnd="true"
         android:layout_margin="@dimen/spacing_large"
         android:background="@drawable/round_button"
         android:padding="@dimen/spacing_smlarge"
-        android:src="@drawable/ic_flip" />
+        android:src="@drawable/ic_flip"
+        android:visibility="gone" />
 
     <ImageView
         android:id="@+id/bluetooth"
@@ -87,7 +87,8 @@
     <TextView
         android:id="@+id/info"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
 
     <LinearLayout
         android:id="@+id/control"

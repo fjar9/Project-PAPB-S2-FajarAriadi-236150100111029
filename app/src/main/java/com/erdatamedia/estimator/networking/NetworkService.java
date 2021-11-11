@@ -8,6 +8,7 @@ import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface NetworkService {
 
@@ -24,6 +25,11 @@ public interface NetworkService {
     @POST("app/update_param")
     Call<Boolean> update_param(
             @Field("param") String param
+    );
+
+    @GET("app/check")
+    Call<String> check(
+            @Query("app") String app
     );
 
 }

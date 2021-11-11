@@ -60,7 +60,7 @@ public class CapturedFragment extends DialogFragment {
         root_view.findViewById(R.id.bt_close).setOnClickListener(v -> sendDataResult(""));
 
         recyclerView = root_view.findViewById(R.id.recyclerView);
-        recyclerView.setLayoutManager(new GridLayoutManager(activity, 3));
+        recyclerView.setLayoutManager(new GridLayoutManager(activity, 5));
         SnapCapturedAdapter adapter = new SnapCapturedAdapter(activity, path, list);
         recyclerView.setAdapter(adapter);
         recyclerView.setOnFlingListener(null);

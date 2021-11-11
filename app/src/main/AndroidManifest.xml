@@ -25,6 +25,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Estimator"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".SpalshActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ParamActivity" />
         <activity
             android:name=".PrepareActivity"
@@ -33,37 +42,12 @@
             android:name=".RecognitionActivity"
             android:screenOrientation="landscape" />
         <activity
-            android:name=".ProcessActivity"
-            android:parentActivityName=".TakePictureActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".DrawingActivity"
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
-        <activity android:name=".TestingActivity" />
-        <activity
-            android:name=".TakePictureActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".SelectDeviceActivity"
-            android:parentActivityName=".TakePictureActivity"
-            android:screenOrientation="landscape" />
-        <activity android:name=".HasilActivity" />
-        <activity android:name=".Tes2Activity" />
-        <activity android:name=".Tes1Activity" />
-        <activity
-            android:name=".FormActivity"
-            android:screenOrientation="portrait" />
-        <activity
             android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Theme.MaterialComponents.Light.DarkActionBar" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

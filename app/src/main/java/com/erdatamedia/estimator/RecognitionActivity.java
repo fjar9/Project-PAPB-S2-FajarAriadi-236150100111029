@@ -146,7 +146,6 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
         mOpenCvCameraView.setCvCameraViewListener(this);
         if (SIDE.equals("SIDE")) flipBtn.setVisibility(View.VISIBLE);
 
-//        mOpenCvCameraView.setMaxFrameSize(1,1);
         try {
             // input size is 300 for this model
             objectDetectorClass = new ObjectDetectorClass(getAssets(),
@@ -252,30 +251,34 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
 
             flipBtn.setRotation(180);
         });
+
     }
 
     private void capture() {
+        int width = recognized.cols() > 0 ? recognized.cols() : mRgba.cols();
+        int height = recognized.rows() > 0 ? recognized.rows() : mRgba.rows();
         int halfCols = recognized.cols() / 2;
         int halfRows = recognized.rows() / 2;
 
-        Bitmap dstBitmap = Bitmap.createBitmap(
-                recognized.cols() > 0 ? recognized.cols() : mRgba.cols(),
-                recognized.rows() > 0 ? recognized.rows() : mRgba.rows(),
-                Bitmap.Config.ARGB_8888);
-        Utils.matToBitmap(recognized, dstBitmap);
+        if (width > 0 && height > 0) {
+            Bitmap dstBitmap = Bitmap.createBitmap(
+                    width, height,
+                    Bitmap.Config.ARGB_8888);
+            Utils.matToBitmap(recognized, dstBitmap);
 
-        preview.setImageBitmap(dstBitmap);
+            preview.setImageBitmap(dstBitmap);
 
-        result = (objectDetectorClass.result * cm * multiplier);
-        String string = "hasil : " + result;
-        info.setText(string);
+            result = (objectDetectorClass.result * cm * multiplier);
+            String string = "hasil : " + result;
+            info.setText(string);
 
-        preview.setVisibility(View.VISIBLE);
-        controlLyt.setVisibility(View.VISIBLE);
-        mOpenCvCameraView.disableView();
-        capaturedDistance = distance;
-        captureBtn.setOnClickListener(view -> {
-        });
+            preview.setVisibility(View.VISIBLE);
+            controlLyt.setVisibility(View.VISIBLE);
+            mOpenCvCameraView.disableView();
+            capaturedDistance = distance;
+            captureBtn.setOnClickListener(view -> {
+            });
+        } else Toast.makeText(activity, "Close the dialog", Toast.LENGTH_SHORT).show();
     }
 
     private void showDialogCaptured() {
