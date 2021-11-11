@@ -4,8 +4,12 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -28,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private RelativeLayout layout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        layout = findViewById(R.id.aboutDialog);
         findViewById(R.id.param).setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, ParamActivity.class)));
         findViewById(R.id.start).setOnClickListener(v -> {
@@ -40,6 +47,29 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             } else requestPermission();
         });
+
+        findViewById(R.id.about).setOnClickListener(v -> layout.setVisibility(View.VISIBLE));
+        TextView versi = findViewById(R.id.versi);
+        versi.setText("Versi " + BuildConfig.VERSION_NAME);
+    }
+
+    boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    public void onBackPressed() {
+        if (layout.getVisibility() == View.VISIBLE) {
+            layout.setVisibility(View.GONE);
+        } else {
+            if (getSupportFragmentManager().getBackStackEntryCount() == 0) {
+                if (doubleBackToExitPressedOnce) {
+                    super.onBackPressed();
+                    return;
+                }
+                doubleBackToExitPressedOnce = true;
+                Toast.makeText(MainActivity.this, "Tekan lagi untuk keluar", Toast.LENGTH_SHORT).show();
+                new Handler().postDelayed(() -> doubleBackToExitPressedOnce = false, 2000);
+            } else super.onBackPressed();
+        }
     }
 
     private boolean hasPermissions() {

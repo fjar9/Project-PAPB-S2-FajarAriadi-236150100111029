@@ -26,6 +26,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -59,10 +60,10 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
     private static final String TAG = "RecognitionActivity";
     private Dialog loading;
 
-    private LinearLayout controlLyt;
     private ImageView flipBtn, bluetoothBtn, captureBtn;
     private Button capturedBtn, saveBtn, delBtn;
     private ImageView preview;
+    private RelativeLayout previewLyt;
     private TextView info, distanceTv;
     private SeekBar seekBar;
 
@@ -130,8 +131,8 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
         SIDE = getIntent().getStringExtra("SIDE");
         param = getIntent().getIntExtra("PARAM", 10);
 
-        controlLyt = findViewById(R.id.control);
         preview = findViewById(R.id.preview);
+        previewLyt = findViewById(R.id.previewLyt);
         info = findViewById(R.id.info);
         distanceTv = findViewById(R.id.distance);
         seekBar = findViewById(R.id.seek);
@@ -187,15 +188,15 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
             foto++;
             String totalFoto = foto + " foto";
             capturedBtn.setText(totalFoto);
-            preview.setVisibility(View.GONE);
-            controlLyt.setVisibility(View.GONE);
+            capturedBtn.setVisibility(View.VISIBLE);
+            previewLyt.setVisibility(View.GONE);
             mOpenCvCameraView.enableView();
             captureBtn.setOnClickListener(view -> capture());
         });
 
         delBtn.setOnClickListener(v -> {
-            preview.setVisibility(View.GONE);
-            controlLyt.setVisibility(View.GONE);
+            capturedBtn.setVisibility(View.VISIBLE);
+            previewLyt.setVisibility(View.GONE);
             mOpenCvCameraView.enableView();
             captureBtn.setOnClickListener(view -> capture());
         });
@@ -272,8 +273,8 @@ public class RecognitionActivity extends AppCompatActivity implements CameraBrid
             String string = "hasil : " + result;
             info.setText(string);
 
-            preview.setVisibility(View.VISIBLE);
-            controlLyt.setVisibility(View.VISIBLE);
+            capturedBtn.setVisibility(View.GONE);
+            previewLyt.setVisibility(View.VISIBLE);
             mOpenCvCameraView.disableView();
             capaturedDistance = distance;
             captureBtn.setOnClickListener(view -> {
