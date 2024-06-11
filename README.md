@@ -3,7 +3,7 @@
 
 ## Deskripsi Singkat
 
-Nama Aplikasi adalah sebuah tool yang memungkinkan pengguna untuk mengestimasi dimensi fisik objek, seperti hewan ternak, menggunakan teknologi pengolahan citra dan pembelajaran mesin. Aplikasi ini dirancang untuk memudahkan pengguna dalam mengukur dimensi seperti lingkar dada atau panjang badan hanya dengan menggunakan gambar.
+Aplikasi Estimator Sapi Potong adalah sebuah tool yang memungkinkan pengguna untuk mengestimasi dimensi fisik objek, seperti hewan ternak, menggunakan teknologi pengolahan citra dan pembelajaran mesin. Aplikasi ini dirancang untuk memudahkan pengguna dalam mengukur dimensi seperti lingkar dada atau panjang badan hanya dengan menggunakan gambar.
 
 ## Fitur Utama
 
